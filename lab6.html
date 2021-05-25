@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcard Game</title>
+
+  <link rel="stylesheet" href="lab6.css">
+</head>
+<body>
+  <div id="left-side">
+    <h1>Flashcard Game</h1>
+
+    <!-- Flashcard Settings -->
+    <form id="input-div">
+      <h2>Flashcard Settings:</h2>
+
+      <span id="error"></span>
+
+      <label for="min">Min Value:</label>
+      <input id="min" type="number" max="100" value="1" autofocus required>
+      
+      <label for="max">Max Value:</label>
+      <input id="max" type="number" max="100" value="10" required>
+      
+      <label for="op-choice">Operation:</label>
+      <select id="op-choice">
+        <option value="+" selected>Addition</option>
+        <option value="-">Subtraction</option>
+        <option value="*">Multiplication</option>
+        <option value="random">All (Mix it up!)</option>
+      </select>
+      
+      <label for="numSeconds">Seconds:</label>
+      <input id="numSeconds" type="number" min="0" value="30" required>
+      
+      <input id="start-btn" type="submit" value="Start!">
+    </form>
+    
+    <!-- Score Panel -->
+    <div id="score-panel" class="hidden">
+      <h2>Score:</h2>
+      <span id="score">0</span>
+    </div>
+  </div>
+
+  <div id="right-side">
+    <!-- Flashcard -->
+    <div id="flashcard" class="hidden">
+      <div>
+        <span id="op1"></span>
+      </div>
+      <div id="second-line">
+        <span id="op"></span>
+        <span id="op2"></span>
+      </div>
+      <hr>
+      <form>
+        <input id="answer" autocomplete="off">
+        <input id="submit-answer" type="submit">
+      </form>
+    </div>
+
+    <!-- Timer -->
+    <div id="timer" class="hidden">
+      Time: <span id="seconds"></span>
+    </div>
+  </div>
+  <script src="lab6.js"></script>
+</body>
+</html>
